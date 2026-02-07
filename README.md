@@ -1,0 +1,2 @@
+# SweetApk
+Aplikacja dla par 
