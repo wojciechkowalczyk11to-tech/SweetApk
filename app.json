@@ -12,7 +12,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#FFF0F5"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.sweetsync.app",
@@ -55,7 +57,8 @@
           "photosPermission": "SweetSync potrzebuje dostępu do zdjęć.",
           "cameraPermission": "SweetSync potrzebuje kamery."
         }
-      ]
+      ],
+      "expo-asset"
     ],
     "extra": {
       "eas": {
