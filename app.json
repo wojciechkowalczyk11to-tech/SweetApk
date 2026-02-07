@@ -1,0 +1,68 @@
+{
+  "expo": {
+    "name": "SweetSync",
+    "slug": "sweet-sync",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "sweetsync",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFF0F5"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.sweetsync.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "SweetSync potrzebuje lokalizacji, aby pokazać Twojemu partnerowi gdzie jesteś.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "SweetSync potrzebuje lokalizacji w tle, aby partner zawsze wiedział gdzie jesteś.",
+        "NSPhotoLibraryUsageDescription": "SweetSync potrzebuje dostępu do zdjęć, aby udostępniać momenty.",
+        "NSCameraUsageDescription": "SweetSync potrzebuje kamery do robienia zdjęć."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFF0F5"
+      },
+      "package": "com.sweetsync.app",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "VIBRATE",
+        "RECEIVE_BOOT_COMPLETED"
+      ]
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-notifications",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "SweetSync potrzebuje lokalizacji, aby partner wiedział gdzie jesteś."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "SweetSync potrzebuje dostępu do zdjęć.",
+          "cameraPermission": "SweetSync potrzebuje kamery."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "PLACEHOLDER_RUN_EAS_BUILD_CONFIGURE"
+      },
+      "supabaseUrl": "YOUR_SUPABASE_URL",
+      "supabaseAnonKey": "YOUR_SUPABASE_ANON_KEY"
+    }
+  }
+}
