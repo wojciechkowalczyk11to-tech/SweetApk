@@ -73,6 +73,7 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
       const unsub = subscribeToPetChanges(coupleId);
       return unsub;
     }
+    return undefined;
   }, [coupleId, loadCoupleData, subscribeToPetChanges]);
 
   // Calculate days together

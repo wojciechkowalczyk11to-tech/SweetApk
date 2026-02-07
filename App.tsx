@@ -1,6 +1,6 @@
 // App.tsx
 import React, { useEffect } from 'react';
-import { ActivityIndicator, View, StyleSheet, LogBox } from 'react-native';
+import { ActivityIndicator, View, Text, StyleSheet, LogBox } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -91,9 +91,9 @@ function MainTabs() {
           const icons = TAB_ICONS[route.name as keyof MainTabParamList];
           return (
             <View style={styles.tabIcon}>
-              <View style={[styles.tabIconText]}>
-                {/* React Native <Text> inside tabBarIcon requires explicit import */}
-              </View>
+              <Text style={styles.tabIconText}>
+                {focused ? icons.active : icons.inactive}
+              </Text>
             </View>
           );
         },
