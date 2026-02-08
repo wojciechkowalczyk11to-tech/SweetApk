@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   StyleSheet,
   ScrollView,
-  Image,
   Dimensions,
 } from 'react-native';
 import { useAuthStore } from '../store/useAuthStore';
@@ -252,7 +251,7 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
 
         <TouchableOpacity
           style={[styles.actionCard, unreadNudges.length > 0 && styles.actionCardHighlight]}
-          onPress={() => navigation.navigate('Nudges' as never)}
+          onPress={() => navigation.navigate('Nudge' as never)}
           activeOpacity={0.7}
         >
           <Text style={styles.actionEmoji}>📳</Text>

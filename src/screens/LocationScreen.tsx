@@ -5,10 +5,9 @@ import {
   Text,
   TouchableOpacity,
   StyleSheet,
-  ActivityIndicator,
   Dimensions,
 } from 'react-native';
-import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 import { useLocationRealtime } from '../hooks/useLocationRealtime';
 import { useAuthStore } from '../store/useAuthStore';
 import { COLORS, SPACING, RADIUS, FONT_SIZE, SHADOWS } from '../lib/theme';
