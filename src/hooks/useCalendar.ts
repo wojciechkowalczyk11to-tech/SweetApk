@@ -4,7 +4,6 @@ import { supabase } from '../lib/supabase';
 import { useAuthStore } from '../store/useAuthStore';
 import { useCoupleStore } from '../store/useCoupleStore';
 import type { CalendarEvent } from '../types/database';
-import dayjs from 'dayjs';
 
 interface UseCalendarResult {
   events: CalendarEvent[];

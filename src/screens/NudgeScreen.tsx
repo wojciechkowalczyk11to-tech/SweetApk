@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   StyleSheet,
   ScrollView,
-  FlatList,
   Vibration,
   Platform,
 } from 'react-native';
@@ -15,7 +14,6 @@ import { useNudges } from '../hooks/useNudges';
 import { useAuthStore } from '../store/useAuthStore';
 import { COLORS, SPACING, RADIUS, FONT_SIZE, SHADOWS } from '../lib/theme';
 import dayjs from 'dayjs';
-import type { Nudge } from '../types/database';
 
 export default function NudgeScreen() {
   const {
@@ -74,8 +72,11 @@ export default function NudgeScreen() {
   }, [customPattern, sendCustomNudge]);
 
   const previewPattern = useCallback((pattern: number[]) => {
+    if (pattern.length === 0) return;
     if (Platform.OS === 'android') {
       Vibration.vibrate([0, ...pattern]);
+    } else {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     }
   }, []);
 
