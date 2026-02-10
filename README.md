@@ -86,6 +86,10 @@ npx eas build --platform android --profile preview
 2. Push na `main` → workflow automatycznie buduje APK
 3. APK dostępne w GitHub Actions artifacts
 
+### CI APK build (GitHub Actions)
+- Workflow uruchamia się teraz dla `push` na `main` oraz dla `pull_request` do `main`, więc APK check przechodzi przed mergem.
+- Artefakt APK znajdziesz w: **GitHub → Actions → Build Android APK → wybrany run → Artifacts**.
+
 **Opcja C – Local Gradle:**
 ```bash
 npx expo prebuild --platform android --clean

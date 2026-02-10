@@ -31,7 +31,6 @@
         "backgroundColor": "#FFF0F5"
       },
       "package": "com.sweetsync.app",
-      "kotlinVersion": "1.9.25",
       "permissions": [
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION",
@@ -59,7 +58,15 @@
           "cameraPermission": "SweetSync potrzebuje kamery."
         }
       ],
-      "expo-asset"
+      "expo-asset",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "kotlinVersion": "1.9.25"
+          }
+        }
+      ]
     ],
     "extra": {
       "eas": {
