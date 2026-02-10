@@ -12,6 +12,9 @@ concurrency:
   group: build-android-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 env:
   NODE_VERSION: '20'
 
@@ -63,14 +66,26 @@ jobs:
           path: android/app/build/outputs/apk/release/app-release.apk
           retention-days: 30
 
+  comment:
+    name: Comment APK link on commit
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+
+    steps:
       - name: Comment APK link on commit
-        if: github.event_name == 'push'
         uses: actions/github-script@v7
         with:
           script: |
-            await github.rest.repos.createCommitComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              commit_sha: context.sha,
-              body: `📱 **SweetSync APK built successfully!**\n\nDownload from the **Actions → Artifacts** section of this workflow run.\n\nBuild: \`${context.sha.substring(0, 7)}\``
-            });
+            try {
+              await github.rest.repos.createCommitComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                commit_sha: context.sha,
+                body: `📱 **SweetSync APK built successfully!**\n\nDownload from the **Actions → Artifacts** section of this workflow run.\n\nBuild: \`${context.sha.substring(0, 7)}\``
+              });
+            } catch (error) {
+              core.warning(`Failed to create commit comment: ${error.message}`);
+            }
