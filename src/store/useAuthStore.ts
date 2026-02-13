@@ -1,6 +1,6 @@
 // src/store/useAuthStore.ts
 import { create } from 'zustand';
-import { supabase, setCachedUserId } from '../lib/supabase';
+import { getSupabaseConfigError, supabase, setCachedUserId } from '../lib/supabase';
 import type { Profile, Couple } from '../types/database';
 import type { Session, User } from '@supabase/supabase-js';
 
@@ -35,6 +35,12 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   error: null,
 
   initialize: async () => {
+    const configError = getSupabaseConfigError();
+    if (configError) {
+      set({ error: configError, isLoading: false, isInitialized: true });
+      return;
+    }
+
     try {
       set({ isLoading: true });
       const { data: { session } } = await supabase.auth.getSession();
