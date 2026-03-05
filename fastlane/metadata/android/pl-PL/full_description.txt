@@ -1,0 +1,33 @@
+SweetSync to romantyczna aplikacja stworzona specjalnie dla par, która pomaga budować i pielęgnować Waszą relację każdego dnia.
+
+🐕 WIRTUALNY PIESEK
+Zaopiekujcie się wspólnym maltańczykiem! Karmcie go, głaszczcie i ubierajcie w ponad 10 uroczych strojów. Szczęście pieska zależy od Waszej wspólnej troski.
+
+📸 GALERIA "CHWILE"
+Twórzcie wspólną galerię z Waszymi najpiękniejszymi chwilami. Obsługuje zdjęcia (JPG, PNG, HEIC), GIF-y, filmy (MP4, MOV) i pliki RAW.
+
+📅 WSPÓŁDZIELONY KALENDARZ
+Planujcie wspólnie – dodawajcie kolorowe wydarzenia, rocznice i ważne daty. Synchronizacja w czasie rzeczywistym.
+
+📍 UDOSTĘPNIANIE LOKALIZACJI
+Sprawdźcie gdzie jest Wasza druga połówka. Lokalizacja w czasie rzeczywistym na mapie z obliczaniem odległości.
+
+💗 ZACZEPKI WIBRACYJNE
+Wyślijcie partnerowi wibracyjnego buziaka, przytulaska lub bicie serca. 7 gotowych wzorów + nagrywanie własnych rytmów!
+
+💋 SYSTEM BUZIAKÓW
+Zdobywajcie wirtualne buziaki za codzienną aktywność i wydawajcie je w sklepiku z ubrankami dla pieska.
+
+⏰ LICZNIK DNI RAZEM
+Śledźcie ile dni jesteście razem i utrzymujcie serię codziennych logowań.
+
+FUNKCJE:
+✅ Bezpieczne logowanie (e-mail + hasło)
+✅ Parowanie kodem – zaproś partnera
+✅ Synchronizacja w czasie rzeczywistym
+✅ Powiadomienia push
+✅ Bezpieczne przechowywanie danych (szyfrowanie)
+✅ Polski interfejs
+✅ Tryb ciemny (wkrótce)
+
+SweetSync – bo miłość zasługuje na swoją apkę 💕

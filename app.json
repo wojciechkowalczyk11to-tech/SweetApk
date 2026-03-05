@@ -15,6 +15,11 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/icon.png"
+    },
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.sweetsync.app",
@@ -31,6 +36,7 @@
         "backgroundColor": "#FFF0F5"
       },
       "package": "com.sweetsync.app",
+      "versionCode": 1,
       "permissions": [
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION",
