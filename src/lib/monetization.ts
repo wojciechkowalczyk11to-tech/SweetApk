@@ -81,10 +81,11 @@ export const PRODUCT_CATALOG = [
  * Reklamy wyświetlane TYLKO w darmowej wersji
  */
 export const AD_CONFIG = {
-  // Identyfikatory jednostek reklamowych (wymień na produkcyjne z AdMob Console)
-  BANNER_HOME: 'ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY',
-  INTERSTITIAL_MOMENTS: 'ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY',
-  REWARDED_KISSES: 'ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY',
+  // Identyfikatory jednostek reklamowych – każda placement wymaga UNIKALNEGO ID z AdMob Console
+  // Zastąp poniższe placeholder'y właściwymi ID przed release'em
+  BANNER_HOME: 'ca-app-pub-XXXXXXXXXXXXXXXX/BANNER_ID',
+  INTERSTITIAL_MOMENTS: 'ca-app-pub-XXXXXXXXXXXXXXXX/INTERSTITIAL_ID',
+  REWARDED_KISSES: 'ca-app-pub-XXXXXXXXXXXXXXXX/REWARDED_ID',
 
   // Testowe ID (używać podczas developmentu)
   TEST_BANNER: 'ca-app-pub-3940256099942544/6300978111',
