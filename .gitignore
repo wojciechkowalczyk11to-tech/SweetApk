@@ -10,9 +10,14 @@ dist/
 web-build/
 .env
 .env.local
+.env.production
 *.apk
 *.aab
 *.ipa
-android/
-ios/
+/android/
+/ios/
 build-result.json
+.vercel/
+release-artifacts/
+google-play-service-account.json
+*.keystore

@@ -19,8 +19,30 @@ env:
   NODE_VERSION: '20'
 
 jobs:
+  typecheck:
+    name: TypeScript Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check
+        run: npx tsc --noEmit
+
   build:
     name: Build APK (Local Gradle)
+    needs: typecheck
     runs-on: ubuntu-latest
     timeout-minutes: 90
 
@@ -49,9 +71,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Type check
-        run: npx tsc --noEmit
-
       - name: Generate native Android project
         run: npx expo prebuild --platform android --clean
 
@@ -64,6 +83,35 @@ jobs:
         with:
           name: SweetSync-APK-${{ github.sha }}
           path: android/app/build/outputs/apk/release/app-release.apk
+          retention-days: 30
+
+  build-web:
+    name: Build Web Export
+    needs: typecheck
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Export web build
+        run: npx expo export --platform web
+
+      - name: Upload web artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SweetSync-Web-${{ github.sha }}
+          path: dist/
           retention-days: 30
 
   comment:

@@ -1,6 +1,8 @@
 # SweetSync 💕
 
-Romantyczna aplikacja dla par – Android (Expo/React Native + Supabase).
+Romantyczna aplikacja dla par – Android / Web (Expo/React Native + Supabase).
+
+[![Build Android APK](https://github.com/wojciechkowalczyk11to-tech/SweetApk/actions/workflows/build-apk.yml/badge.svg)](https://github.com/wojciechkowalczyk11to-tech/SweetApk/actions/workflows/build-apk.yml)
 
 ## Funkcje
 
@@ -11,6 +13,7 @@ Romantyczna aplikacja dla par – Android (Expo/React Native + Supabase).
 - **Zaczepki wibracyjne** – gotowe wzory + nagrywanie własnych rytmów
 - **Sklep z ubrankami** dla pieska (kupowane za buziaki)
 - **Licznik dni razem** + serie logowań
+- **System monetyzacji** – in-app purchases, paczki buziaków, stroje premium
 
 ## Tech Stack
 
@@ -22,6 +25,8 @@ Romantyczna aplikacja dla par – Android (Expo/React Native + Supabase).
 | Maps | react-native-maps |
 | Calendar | react-native-calendars |
 | Build | EAS Build / GitHub Actions |
+| Web Deploy | Vercel (Expo Web) |
+| Monetyzacja | In-App Purchases (przygotowane) |
 
 ## Required Manual Steps
 
@@ -163,3 +168,30 @@ SweetSync/
 3. **Buckety Storage** tworzy migracja automatycznie – nie twórz ręcznie
 4. **RLS** jest włączony – bez poprawnego tokena auth żaden request nie przejdzie
 5. **Realtime** jest aktywowany na tabelach: `locations`, `nudges`, `moments`, `pets`, `kiss_wallet`
+
+## Wdrożenie (Deployment)
+
+Szczegółowy przewodnik wdrożenia: **[DEPLOYMENT.md](DEPLOYMENT.md)**
+
+### Szybki start – kanały dystrybucji
+
+| Kanał | Komenda | Opis |
+|-------|---------|------|
+| **Dev** | `npm start` | Expo dev server + QR code |
+| **Web** | `npm run build:web` | Eksport web → Vercel |
+| **APK** | `npm run build:apk` | APK via EAS Build |
+| **Google Play** | `npm run build:aab` | AAB via EAS Build |
+| **Release** | `git tag v1.0.0 && git push --tags` | Automatyczny GitHub Release |
+
+### Monetyzacja
+
+Konfiguracja monetyzacji: `src/lib/monetization.ts`
+- Paczki buziaków (in-app purchase)
+- Stroje premium
+- Subskrypcja SweetSync Premium
+- Reklamy z nagrodą (opt-in)
+
+### Dokumenty prawne
+
+- [Polityka prywatności](PRIVACY_POLICY.md)
+- [Regulamin](TERMS_OF_SERVICE.md)
